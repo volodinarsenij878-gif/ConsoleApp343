@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Program183
+{
+    internal class Program
+    {
+        static void Main()
+        {
+            Console.Write("Номер элемента (1–5): ");
+            if (!int.TryParse(Console.ReadLine(), out int elem))
+            {
+                Console.WriteLine("Ошибка.");
+                return;
+            }
+
+            (string name, string symbol) item;
+            switch (elem)
+            {
+                case 1: item = ("Водород", "H"); break;
+                case 2: item = ("Гелий", "He"); break;
+                case 3: item = ("Литий", "Li"); break;
+                case 4: item = ("Бериллий", "Be"); break;
+                case 5: item = ("Бор", "B"); break;
+                default:
+                    Console.WriteLine("Элемент не найден.");
+                    return;
+            }
+            Console.WriteLine($"{item.name} ({item.symbol})");
+        }
+    }
+}
